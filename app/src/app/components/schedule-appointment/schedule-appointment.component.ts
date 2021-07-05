@@ -122,22 +122,27 @@ export class ScheduleAppointmentComponent implements OnInit {
   }
   getAllInputs() {
     console.log("form Submitted", this.selectedSite, this.selectedDate, this.firstName, this.martialStatus, this.phone)
-    this.appointments = {
-      'site': this.selectedSite,
-      'city': this.selectedCity,
-      'deliverySite': this.getSelectedDeliverySite,
-      'date': this.selectedDate,
-      'time': this.selectedTime,
-      'personalInfo': {
-        'firstName': this.firstName,
-        'fatherName': this.fatherName,
-        'birthPlace': this.birthPlace,
-        'email': this.email,
-        'phone': this.phone,
-        'martialStatus': this.martialStatus,
-        'passportPage': this.passportPage,
-        'birthCertificate': this.birthCertificate
-      }
+    // this.appointments = {
+    //   'site': this.selectedSite,
+    //   'city': this.selectedCity,
+    //   'deliverySite': this.getSelectedDeliverySite,
+    //   'date': this.selectedDate,
+    //   'time': this.selectedTime,
+    //   'personalInfo': {
+    //     'firstName': this.firstName,
+    //     'fatherName': this.fatherName,
+    //     'birthPlace': this.birthPlace,
+    //     'email': this.email,
+    //     'phone': this.phone,
+    //     'martialStatus': this.martialStatus,
+    //     'passportPage': this.passportPage,
+    //     'birthCertificate': this.birthCertificate
+    //   }
+    // }
+    this.appointments= {
+      'firstName':this.firstName,
+      'fatherName':this.fatherName,
+      'email':this.email
     }
     this.newRequestAppointment(this.appointments);
   }
