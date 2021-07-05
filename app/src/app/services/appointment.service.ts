@@ -17,28 +17,23 @@ export class AppointmentService {
 
   constructor( private http: HttpClient) { }
 
-  // getting all appointments
-  // getAllAppointnments(): Observable<AppointmentSchema>{
-  //   return this.http.get<AppointmentSchema>(this.API_URL_USERS)
-  //         .map(res => res.json());
-
-  // }
-  getAllAppointnments(){
+  // getallappointments
+  getAllAppointnments():Observable<AppointmentSchema>{
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       // 'Authorization': this.authService.token
     });
-    return this.http.get(this.API_URL_USERS, { headers: headers })
+    return this.http.get<AppointmentSchema>(this.API_URL_USERS, { headers: headers })
             .pipe(map(res => res));
   }
 
   // request appointment
-  requestAppointment(appointment:any){
+  requestAppointment(appointment:any):Observable<AppointmentSchema>{
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       // 'Authorization': this.authService.token
     });
-    return this.http.post(`${this.API_URL_USERS}/appointment`,appointment,{ headers: headers }) 
+    return this.http.post<AppointmentSchema>(`${this.API_URL_USERS}/appointment`,appointment,{ headers: headers }) 
           .pipe(map(res => res));
   }
 
