@@ -11,13 +11,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { ScheduleAppointmentComponent } from './components/schedule-appointment/schedule-appointment.component';
 import { AppointmentService } from './services/appointment.service';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { SignupPageComponent } from './components/signup-page/signup-page.component';
+import { StatusFormComponent } from './components/status-form/status-form.component';
+import { ApplicationListComponent } from './components/application-list/application-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ScheduleAppointmentComponent
+    ScheduleAppointmentComponent,
+    LoginPageComponent,
+    SignupPageComponent,
+    StatusFormComponent,
+    ApplicationListComponent
   ],
   imports: [
     BrowserModule,

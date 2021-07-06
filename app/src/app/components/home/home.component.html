@@ -12,11 +12,12 @@
     <a title="Home" (click)="getHome()">Home</a>
     <a title="schedule appointment" (click)="getHome()">Schedule Appointment</a>
     <a title="Status" (click)="getStatus()">Status</a>
+    <a title="Status" (click)="getApplication()">Manage Application</a>
   </div>
   <div class="spacer"></div>
   <div class="nav">
-    <a title="Home" (click)="getHome()">Register</a>
-    <a title="schedule appointment" (click)="getSchedule()">Log In</a>
+    <a title="Home" (click)="getRegister()">Register</a>
+    <a title="schedule appointment" (click)="getLogin()">Log In</a>
   </div>
 
 
@@ -24,8 +25,16 @@
 
 <div class="dynamic" style="margin-top: 20vh;">
 
-  <div class="content3" *ngIf="viewSchedule">
-    <h1>hello</h1>
+  <div class="content5" *ngIf="viewApplication">
+    <app-application-list></app-application-list>
+  </div>
+
+  <div class="content4" *ngIf="viewLogin">
+    <app-login-page></app-login-page>
+  </div>
+
+  <div class="content1" *ngIf="viewRegister">
+    <app-signup-page></app-signup-page>
   </div>
 
   <div class="content1" role="main" *ngIf="viewStatus">
@@ -79,7 +88,6 @@
     <!-- <div class="card highlight-card card-small">
 
     </div> -->
-
   </div>
 
   <div class="content2" *ngIf="viewHome">

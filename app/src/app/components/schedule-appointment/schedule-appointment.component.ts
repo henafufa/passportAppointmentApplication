@@ -38,6 +38,8 @@ export class ScheduleAppointmentComponent implements OnInit {
   martialStatus = '';
   passportPage = '';
   birthCertificate = '';
+  public successMsg ="";
+  public errorMsg ="";
 
   constructor(private formBuilder: FormBuilder, private appointemnetService: AppointmentService) { }
 
@@ -154,7 +156,11 @@ export class ScheduleAppointmentComponent implements OnInit {
       .subscribe((res) => {
         console.log('all appointment gained', res);
         this.appointments = res;
-      });
+      },
+      (error: ErrorEvent)=>{
+        this.errorMsg= error.error.message;
+      }
+      );
   }
 
   // request appointments
@@ -163,7 +169,12 @@ export class ScheduleAppointmentComponent implements OnInit {
     this.appointemnetService.requestAppointment(appointments)
       .subscribe((res) => {
         console.log('appointment requested successfully', res);
-      });
+        this.successMsg= "request appointment submitted successfully";
+      },
+      (error: ErrorEvent)=>{
+        this.errorMsg= error.error.message;
+      }
+      );
 
   }
 }
