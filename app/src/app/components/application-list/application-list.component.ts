@@ -16,7 +16,7 @@ export class ApplicationListComponent implements OnInit {
   id:any;
   public successMsg ="";
   public errorMsg ="";
-  
+
   constructor(private appoitmentService: AppointmentService) { }
 
   ngOnInit(): void {
